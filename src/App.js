@@ -1,11 +1,10 @@
 import './App.scss';
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import Openmap from './components/Openmap';
 import Login from './components/Login';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   BrowserRouter as Router, Routes, Route
 } from "react-router-dom";
