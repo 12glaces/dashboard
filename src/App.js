@@ -1,5 +1,5 @@
 import './App.scss';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import Openmap from './components/Openmap';
 import Login from './components/Login';
 import Container from 'react-bootstrap/Container';
