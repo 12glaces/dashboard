@@ -1,6 +1,6 @@
 import './App.scss';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Openmap from './components/Openmap';
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import Login from './components/Login';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
