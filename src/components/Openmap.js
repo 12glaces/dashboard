@@ -1,4 +1,4 @@
-import { Marker, Popup, MapContainer, TileLayer, useMapEvents } from 'react-leaflet';
+import { Marker, Popup, MapContainer, TileLayer, useMapEvents, Tooltip } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import React from 'react';
 import { useState } from 'react';
@@ -13,7 +13,7 @@ const Openmap = () => {
     const [markers, setMarkers] = useState([
         {
           lat: 45.227,
-          lng: 2.213,
+          lng: 3.213,
         }
     ]);
     const MyComponent = () => {
@@ -29,7 +29,7 @@ const Openmap = () => {
             <div className='map'>
             <MapContainer center={[45.227, 2.213]} zoom={8} >
             <MyComponent/>
-            {markers.map((marker, i) => (  // <---- parantheses good
+            {markers.map((marker, i) => (
             <Marker key={`marker-${i}`} position={marker}>
                 <Popup>
                 <span>
@@ -38,6 +38,16 @@ const Openmap = () => {
                 </Popup>
             </Marker>
             ))}
+            <Marker position={[45.227, 2.213]}>
+                <Popup>
+                <span>
+                    Yes this marker is in france. <br /> Oui Oui Oui Baguette hon hon hon
+                </span>
+                </Popup>
+                <Tooltip direction="bottom" offset={[-15, 40]} opacity={1} permanent>
+                    Click on the map to add a marker!!
+                </Tooltip>
+            </Marker>
                 <TileLayer
                     attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
