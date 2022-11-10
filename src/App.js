@@ -1,7 +1,7 @@
 import './App.scss';
 import {React, useEffect, useState} from 'react';
-import Openmap from './components/Openmap';
-import Login from './components/Login';
+import Openmap from './pages/Openmap';
+import Login from './pages/Login';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -11,6 +11,7 @@ import {
 } from "react-router-dom";
 import { onAuthStateChanged,signOut } from 'firebase/auth';
 import { auth } from './Firebase/firebase';
+import Trade from './pages/Trade';
 const App = () => {
   const [user, setUser] = useState({});
   useEffect(() => {
@@ -31,6 +32,7 @@ const App = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link href="/map">Map</Nav.Link>              
+              <Nav.Link href="/trade">Trade chart</Nav.Link>       
               {user? <Nav.Link className="logoff" onClick={logout}> Sign Out </Nav.Link>
               :               
               <Nav.Link href="/login">Login</Nav.Link>}
@@ -45,6 +47,8 @@ const App = () => {
         <Route exact path='/login' element={<Login/>}/>}
         {user? <Route exact path='/map' element={<Openmap/>}/> :
         null}
+        <Route exact path='/trade' element={<Trade/>}/> 
+      
       </Routes>
     </Router>
     </div>
