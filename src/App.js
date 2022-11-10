@@ -43,14 +43,17 @@ const App = () => {
         </Container>
       </Navbar>
       <Routes>
-      <Route exact path='/iot' element={<Iot/>}/>
         {user? <Route exact path='*' element={<Openmap/>}/> : 
         <Route exact path='*' element={<Login/>}/>}
         {user? <Route exact path='/login' element={<Openmap/>}/> : 
         <Route exact path='/login' element={<Login/>}/>}
+        {user?<Route exact path='/iot' element={<Iot/>}/>: 
+        <Route exact path='/login' element={<Login/>}/>}
+        {user?<Route exact path='/trade' element={<Trade/>}/> : 
+        <Route exact path='/login' element={<Login/>}/>}
         {user? <Route exact path='/map' element={<Openmap/>}/> :
         null}
-        <Route exact path='/trade' element={<Trade/>}/> 
+        
       
       </Routes>
     </Router>
