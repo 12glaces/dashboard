@@ -1,7 +1,6 @@
 import { Marker, Popup, MapContainer, TileLayer, useMapEvents, Tooltip } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import L from 'leaflet';
 L.Icon.Default.mergeOptions({
     iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),

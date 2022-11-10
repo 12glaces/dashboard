@@ -102,10 +102,11 @@ const Login = () => {
                         <Button onClick={register}> Create User</Button>
                     </div>                    
                 </form>
-                </div>     
-                <p>You can create an account or use this test account:</p>
-                <p>email: test@test.com</p>
-                <p>password: testtest</p>  
+                </div>  
+                <p></p>   
+                <p>You can create an account or use the following account:</p>
+                <p>Email: test@test.com</p>
+                <p>Password: testtest</p>  
                 
         </div>
     );

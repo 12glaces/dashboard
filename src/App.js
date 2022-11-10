@@ -12,7 +12,6 @@ import {
 import { onAuthStateChanged,signOut } from 'firebase/auth';
 import { auth } from './Firebase/firebase';
 const App = () => {
-  
   const [user, setUser] = useState({});
   useEffect(() => {
     onAuthStateChanged(auth, (currentUser) => {
@@ -40,8 +39,10 @@ const App = () => {
         </Container>
       </Navbar>
       <Routes>
-        <Route exact path='*' element={<Login/>}/>
-        <Route exact path='/login' element={<Login/>}/>
+        {user? <Route exact path='*' element={<Openmap/>}/> : 
+        <Route exact path='*' element={<Login/>}/>}
+        {user? <Route exact path='/login' element={<Openmap/>}/> : 
+        <Route exact path='/login' element={<Login/>}/>}
         {user? <Route exact path='/map' element={<Openmap/>}/> :
         null}
       </Routes>
