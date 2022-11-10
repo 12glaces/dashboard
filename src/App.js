@@ -12,6 +12,7 @@ import {
 import { onAuthStateChanged,signOut } from 'firebase/auth';
 import { auth } from './Firebase/firebase';
 import Trade from './pages/Trade';
+import Iot from './pages/Iot';
 const App = () => {
   const [user, setUser] = useState({});
   useEffect(() => {
@@ -32,7 +33,8 @@ const App = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link href="/map">Map</Nav.Link>              
-              <Nav.Link href="/trade">Trade chart</Nav.Link>       
+              <Nav.Link href="/trade">Trade chart</Nav.Link>  
+              <Nav.Link href="/iot">IOT settings</Nav.Link>        
               {user? <Nav.Link className="logoff" onClick={logout}> Sign Out </Nav.Link>
               :               
               <Nav.Link href="/login">Login</Nav.Link>}
@@ -41,6 +43,7 @@ const App = () => {
         </Container>
       </Navbar>
       <Routes>
+      <Route exact path='/iot' element={<Iot/>}/>
         {user? <Route exact path='*' element={<Openmap/>}/> : 
         <Route exact path='*' element={<Login/>}/>}
         {user? <Route exact path='/login' element={<Openmap/>}/> : 
