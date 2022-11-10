@@ -17,7 +17,6 @@ const Iot = () => {
         setinternetofthings(oldArray => {
             return oldArray.filter((value, i) => i !== index)});
       };
-    
     return (
         <div className="container">
             {console.log(internetofthings)}
