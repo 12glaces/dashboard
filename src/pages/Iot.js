@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Button from 'react-bootstrap/Button';
 import { FaCamera, FaCarAlt, FaCloudflare, FaInbox, FaInstalod, FaLightbulb, FaLock, FaMobileAlt, FaWifi } from 'react-icons/fa';
 const Iot = () => {
     const [internetofthings, setinternetofthings] = useState([
@@ -24,7 +25,7 @@ const Iot = () => {
                 <div className="card">
                     {iots.icon}
                     <h1 className="card--title">{iots.title}</h1>
-                    <a className="card--link" onClick={()=>removeKey(index)} >Remove</a>
+                    <Button className="card--link" onClick={()=>removeKey(index)} >Remove</Button>
                 </div>
             )}
         </div>
