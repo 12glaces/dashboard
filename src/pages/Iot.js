@@ -10,7 +10,7 @@ const Iot = () => {
         { id: 4,title: "Wifi", icon: <FaWifi size={100} /> },
         { id: 5, title: "Livebox", icon: <FaInbox size={100} />},
         { id: 6,title: "Storage", icon: <FaInstalod size={100} /> },
-        { id: 7,title: "Safty camera", icon: <FaCamera size={100} /> },
+        { id: 7,title: "Safety camera", icon: <FaCamera size={100} /> },
         { id: 8,title: "Securty lock", icon: <FaLock size={100} /> },
         { id: 9,title: "Wifi 2", icon: <FaWifi size={100} /> },
     ])
